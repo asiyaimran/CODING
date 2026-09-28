@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Happy Anniversary My Love 💖</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Canvas Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Background Hearts -->
+  <div class="hearts-container" id="heartsContainer"></div>
+
+  <!-- Ambient Audio Toggle -->
+  <button class="music-toggle" id="musicToggle" aria-label="Toggle Music" title="Play Romantic Music">
+    <i class="fa-solid fa-music"></i>
+    <span class="music-pulse"></span>
+  </button>
+  <audio id="bgMusic" loop src="https://assets.mixkit.co/music/preview/mixkit-romantic-sunset-688.mp3"></audio>
+
+  <main class="main-wrapper">
+    
+    <!-- STEP 1: HERO / INTRO -->
+    <section class="step-card active" id="step1">
+      <div class="card-glass">
+        <div class="heart-badge"><i class="fa-solid fa-heart"></i></div>
+        <h1 class="romantic-title">Happy Birth of Our Relation! 💕</h1>
+        <p class="romantic-subtitle">"29th September - I can never forget this day..."</p>
+        <div class="divider"><span>💖</span></div>
+        <p class="romantic-desc">A special secret envelope is waiting for you.</p>
+        <button class="btn-primary" onclick="goToStep(2)">
+          <span>Open My Heart</span> <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- STEP 2: SECRET LOCK + ENVELOPE -->
+    <section class="step-card" id="step2">
+      
+      <!-- SECRET CODE PROMPT CARD -->
+      <div class="lock-box" id="lockBox">
+        <div class="lock-icon"><i class="fa-solid fa-lock"></i></div>
+        <h2>Who am I?</h2>
+        <p class="lock-subtitle">Type the secret word to unlock your envelope:</p>
+        <form onsubmit="event.preventDefault(); checkSecret();" class="input-form">
+          <div class="input-group">
+            <input type="text" id="secretInput" placeholder="Enter secret word..." autocomplete="off" spellcheck="false">
+            <button type="submit" class="btn-unlock">
+              <span>Unlock</span> <i class="fa-solid fa-key"></i>
+            </button>
+          </div>
+        </form>
+        <div class="error-msg" id="errorMsg">
+          <i class="fa-solid fa-circle-xmark"></i> Oops! Wrong word. Hint: Think of <strong>"alpha"</strong> 😉
+        </div>
+      </div>
+
+      <!-- CENTERED ENVELOPE CONTAINER -->
+      <div class="envelope-wrapper hidden" id="envelopeWrapper">
+        <div class="envelope" id="envelope">
+          
+          <!-- Envelope Flap -->
+          <div class="envelope-flap" id="flap"></div>
+          
+          <!-- Envelope Front Pocket -->
+          <div class="envelope-pocket"></div>
+          
+          <!-- MINI LETTER INSIDE -->
+          <div class="letter-mini" id="letterMini">
+            <div class="mini-content">
+              <i class="fa-solid fa-heart mini-heart"></i>
+              <p>Opening your letter...</p>
+            </div>
+          </div>
+
+          <!-- HEART WAX SEAL -->
+          <div class="envelope-seal" id="seal" onclick="triggerOpenEffect()">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </div>
+
+        <p class="tap-hint" id="tapHint">✨ Tap the heart seal to open! ✨</p>
+      </div>
+
+    </section>
+
+    <!-- STEP 3: FULL RECTANGLE LETTER CARD -->
+    <section class="step-card" id="stepLetter">
+      <div class="letter-card-full" id="letterCardFull">
+        <div class="letter-header">
+          <div class="header-top">
+            <span class="date-stamp">29th September ✨</span>
+            <span class="envelope-icon"><i class="fa-solid fa-envelope-open-text"></i></span>
+          </div>
+          <h2>To My Dearest Faraz ❤️</h2>
+        </div>
+
+        <div class="letter-body-full">
+          <p>Meri jaaan mei sb theek krdungi dekhna meine bht pareshan kara hai tmko in 2 saal Meine bhttt pareshan kara hain hainna lekin tm hamesha rahe mere sth pata hain mei bht change hoagye hun or dekhna or achi change ho jaungi jesa tmko chahiye bilkul wesi tm proud feel kroge tm bologe Asiya good jb tmhhare pass aye thi bilkul be aaql larki faltu baat pr rona jiska koi sense nhi hota tha haan ab hua nhi hain sb theek ,krdungi Mei aaa hum but batei krenge and i promise per aapko pareshan nhi krungi achi bachii achi larki ke trha rahungi no rona dhona tmko baar baar call krke pareshan nhi krungaaaa,</p>
+
+          <p>Faraz aap mujhko chodhna nhi mere sth rehana mujhko seekhana tmhari kesi banu mei wese seekh gye hunnnnn pata hain bs tmko call krke hi pareshan krti wese mei achi rehti padhai krti apko pata hain mei books bhi padhti ab ,aap ijldi ana aapka wait kr rhi hun apke liye bht pyaara gift lekr rakha hain apko dena hain aap bht gussa krte ho but ab aaj nhi Krna aaj srf pyyar wali batei wo bhi mei bolungi aap suunenge or phr end mei ,mei aapse bolungi ooo jaan ab tmko pareshan nhi krungi aapko pata hain ye likhte likhte ro rhi hun mei thoda to nhi bth roti hun tm theek krdena ye adat</p>
+
+          <p>ek baat bolu itrana mt aap pr bht trust krti hun tm pr lekin haan drti hun but drti hun tmko apna samjhne lagi hun itna haq itna haq jatane lagi hun hadd nhi tmhare alawa kisi ko apna nhi manti mrne pr chaar log chahiye hote haina ,mei to chahun mujhe srf tm lekr jao Faraz ,phele beti chahiye thi Aab beta bni chahiye tmhari trha u r besttttt besttt besttttttt ,daily allah talah se tmhara zikr krti hunnn mei bht lucky hunnn mujhko tm mile</p>
+
+          <p>mujhko maaf krdena Mei kbhi tmhare sth nhi rhi jb tmko meri zarurat rahi hamesha dur rhi pata nhi kitni baaar tmko meri zarurat padhi hogi mujhko maaf krdo mei apni immaturity se sb kharab kr rhi hun mujhko maaf krdo hr ek pl ke liye jismei tm roye ab rona aye na mere seene pr sr rakh kr ronaaaa meri godh mei hann bht busy rehtee ho allah tmko kmiyab kre or mera hamesha rakhe heheheheh chalo ab bht likhdi shyd tm paddho naaaa betaaaa aaj to tm gyeeee heheh dro mt srf aai gye idiot aaj ka time mangungi i know my man is a busy man chalo ab love u bolo ft ft bhyyyy</p>
+
+          <p>acha suno 29 sep Mei kbhi nhi bhul skti mei meri birth date bhul jau lekin ye nhi íts a birth date of our relation meri battameeziyo ki wajeh se mt jaao mujhse dur .</p>
+
+          <div class="signature-block">
+            <p class="signature">Yours forever & always,<br><span>Asiya 💕</span></p>
+          </div>
+        </div>
+
+        <div class="letter-footer">
+          <button class="btn-next" onclick="goToStep(3)">
+            <span>Next</span> <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 4: FINALE CRINGE MESSAGE -->
+    <section class="step-card" id="step3">
+      <div class="card-glass finale-card">
+        <div class="big-heart-icon">
+          <i class="fa-solid fa-heart-pulse"></i>
+        </div>
+        <h1 class="finale-title">Yes, this is to be cringe...</h1>
+        <h2 class="finale-subtitle">...but I love you forever, idiot! ❤️😜</h2>
+        <div class="sparkle-row">✨ 💖 ✨ 💖 ✨</div>
+        <p class="finale-note">You are my favorite notification & my favorite person, Faraz.</p>
+
+        <button class="btn-primary btn-replay" onclick="restartExperience()">
+          <i class="fa-solid fa-rotate-left"></i> <span>Replay Surprise</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
